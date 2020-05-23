@@ -6,37 +6,36 @@ function generateMarkdown(data) {
   }
   
   return `
-  # ${data.title}
-  ![License Badge](${data.license})
+#${data.title}
+![License Badge](${data.license})
 
-  ${data.description}
+${data.description}
 
-  ## Table of Contents
-  - Installation(#installation)
-  - Usage(#usage)
-  - Credits(#credits)
-  - Tests (#tests)
+## Table of Contents
+*[Installation](#installation)
+*[Usage](#usage)
+*[Credits](#credits)
+*[Tests](#tests)
 
-  ## Installation
+## Installation
 
-  How to install the project: 
+How to install the project: 
 
-  ${data.installation}
+${data.installation}
 
-  ## Usage
+## Usage
 
-  ${data.usage}
+${data.usage}
 
-  ## Credits
+## Credits
 
-  ${data.credits}
+${data.credits}
 
-  ## Tests
+## Tests
 
-  How to test the project:
+How to test the project:
 
-  ${data.test}
-`;
+${data.test}`;
 }
 
 module.exports = generateMarkdown;

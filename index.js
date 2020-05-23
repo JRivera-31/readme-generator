@@ -56,9 +56,9 @@ const questions = ["What is the title of the project?", "What is your Github use
         } 
     ]).then(function(answers) {
         let readme = generateMarkdown(answers)
-        let fileName = answers.name + ".md" 
+        let fileName = answers.title + ".md" 
             
-        fs.writeFile(fileName, JSON.stringify(readme), err => {
+        fs.writeFile(fileName, readme, err => {
             if (err) {
                 throw err
             } else {    
