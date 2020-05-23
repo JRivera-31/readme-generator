@@ -1,41 +1,56 @@
 function generateMarkdown(data) {
   switch (data.license) {
     case "MIT":
-      data.license = `https://img.shields.io/badge/github/license/:${data.username}/:${data.repository}`
-    break 
+      data.license = "https://img.shields.io/badge/license-MIT-green"
+    break
+    case "Apache":
+      data.license = "https://img.shields.io/badge/license-Apache-blue"
+    break
+    case "Apache 2":
+      data.license = "https://img.shields.io/badge/license-Apache%202-blue"
+    break
+    case "Github":
+      data.license = `https://img.shields.io/github/license/${data.username}/${data.repo}?color=g&style=plastic"`
+    break    
   }
   
   return `
-#${data.title}
+# ${data.title}
 ![License Badge](${data.license})
 
 ${data.description}
 
 ## Table of Contents
-*[Installation](#installation)
-*[Usage](#usage)
-*[Credits](#credits)
-*[Tests](#tests)
+-[Installation](#installation)
 
-## Installation
+-[Usage](#usage)
 
-How to install the project: 
+-[Credits](#credits)
 
-${data.installation}
+-[Tests](#tests)
 
-## Usage
+## Installation:
+
+**How to install the project:** ${data.installation}` +
+
+"\n\n```\n" +
+data.installationcode +
+"\n```\n\n" +
+
+`## Usage:
 
 ${data.usage}
 
-## Credits
+## Credits:
 
-${data.credits}
+**Credits to contributors:** ${data.credits}
 
-## Tests
+## Test:
 
-How to test the project:
-
-${data.test}`;
+**How to test the project:** ${data.test}` +
+"\n\n```\n" +
+data.testcode +
+"\n```" 
 }
 
 module.exports = generateMarkdown;
