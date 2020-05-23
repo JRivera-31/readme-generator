@@ -1,16 +1,12 @@
 const fs = require("fs")
 const inquirer = require("inquirer")
+const generateMarkdown = require("./utils/generateMarkdown")
 
 const questions = ["What is the title of the project?", "What is your Github username?", "What is the name of your repository?",
     "Please write a description of the project:", "Any specfic usage of the project?a", "Which license?", "If you have any contributors, what are their Github usernames?",
     "How to test your project?", "Installation method: "
 ];
-
-function writeToFile(fileName, data) {
-    
-}    
-
-function init() {
+   
     inquirer.prompt([
         {
             type: "input",
@@ -58,8 +54,16 @@ function init() {
             message: questions[8],
             name: "installation"
         } 
-    ]
-    )
-}
+    ]).then(function(answers) {
+        let readme = generateMarkdown(answers)
+        let fileName = answers.name + ".md" 
+            
+        fs.writeFile(fileName, JSON.stringify(readme), err => {
+            if (err) {
+                throw err
+            } else {    
+                console.log("Success")
+            }    
+        })
+    })
 
-init();
