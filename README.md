@@ -2,7 +2,7 @@
 # Good README Generator
 ![License Badge](https://img.shields.io/github/license/JRivera-31/readme-generator?color=g&style=plastic)
 
-This app was created to provide a template for readme files. The user answers questions for what to include in the readme and a markdown file is created based on the project title. The user can choose what they want to include in the readme and then edit the file that is generated if they are not completely happy. This app is useful in reducing the amount of time taken on creating README files. 
+This command line app was created to provide a template for readme files. The user answers questions for what to include in the readme and a markdown file is created based on the project title. The user can choose what they want to include in the readme and then edit the file that is generated if they are not completely happy. This app is useful in reducing the amount of time taken on creating README files. 
 
 ## Table of Contents
 -[Installation](#installation)
