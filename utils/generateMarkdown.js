@@ -27,7 +27,7 @@ ${data.description}
 
 -[Credits](#credits)
 
--[Tests](#tests)
+-[Test](#test)
 
 ## Installation:
 
